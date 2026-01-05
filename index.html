@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vishal Mega Mart</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="https://picsum.photos/seed/vishal/48/48" alt="" class="logo" />
+        <h1>Vishal Mega Mart</h1>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#featured">Featured</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <input id="search" type="search" placeholder="Search products..." />
+        <button class="cart-btn" id="open-cart" aria-label="Open cart">
+          🛒 <span id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Welcome to Vishal Mega Mart</h2>
+          <p>Daily essentials, electronics, fashion and more — great value every day.</p>
+          <a href="#products" class="btn">Shop Now</a>
+        </div>
+        <div class="hero-image">
+          <img src="https://picsum.photos/seed/megamar/600/360" alt="Mega Mart banner" />
+        </div>
+      </div>
+    </section>
+
+    <section id="categories" class="section container">
+      <h3>Categories</h3>
+      <div class="grid categories-grid" id="categories-list">
+        <!-- categories populated by JS -->
+      </div>
+    </section>
+
+    <section id="featured" class="section container">
+      <h3>Featured Products</h3>
+      <div class="grid products-grid" id="featured-list">
+        <!-- featured product cards -->
+      </div>
+    </section>
+
+    <section id="products" class="section container">
+      <div class="section-head">
+        <h3>All Products</h3>
+        <select id="filter-category">
+          <option value="all">All categories</option>
+        </select>
+      </div>
+      <div class="grid products-grid" id="products-list">
+        <!-- product cards -->
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h3>Contact</h3>
+      <p>Email: support@vishalmegamart.example • Phone: +91 98765 43210</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Vishal Mega Mart. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cart modal -->
+  <div id="cart-modal" class="cart-modal" aria-hidden="true">
+    <div class="cart-panel" role="dialog" aria-modal="true">
+      <button id="close-cart" class="close-btn" aria-label="Close cart">✕</button>
+      <h4>Your Cart</h4>
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-total">Total: ₹<span id="cart-total">0</span></div>
+        <div>
+          <button id="clear-cart" class="btn btn-outline">Clear</button>
+          <button id="checkout" class="btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+  </html>
