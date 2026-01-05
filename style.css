@@ -1,0 +1,108 @@
+/* Simple responsive styles for Vishal Mega Mart */
+:root{
+  --primary:#0077cc;
+  --accent:#ff6b00;
+  --bg:#f6f7fb;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --radius:10px;
+  --container-width:1100px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#111827;
+  line-height:1.4;
+}
+
+.container{
+  max-width:var(--container-width);
+  margin:0 auto;
+  padding:1rem;
+}
+
+/* Header */
+.site-header{
+  background:linear-gradient(90deg,#fff 0%, #f8fbff 100%);
+  border-bottom:1px solid #e6e9ef;
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+.header-inner{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:.5rem}
+.brand h1{font-size:1.15rem;margin:0}
+.logo{width:44px;height:44px;border-radius:8px;object-fit:cover}
+
+.main-nav{display:flex;gap:0.75rem;align-items:center}
+.main-nav a{color:#334155;text-decoration:none;font-weight:600;padding:.35rem .5rem;border-radius:6px}
+.main-nav a:hover{background:#eef2ff;color:var(--primary)}
+
+.header-actions{display:flex;gap:.5rem;align-items:center}
+.header-actions input[type="search"]{
+  padding:.45rem .6rem;border-radius:8px;border:1px solid #e2e8f0;background:white;width:180px
+}
+.cart-btn{background:var(--primary);Color:white;border:none;padding:.45rem .6rem;border-radius:8px;cursor:pointer;font-weight:700}
+
+/* Hero */
+.hero{padding:2rem 0}
+.hero-inner{display:flex;gap:1.5rem;align-items:center;justify-content:space-between}
+.hero-text{max-width:520px}
+.hero-text h2{margin:0 0 .5rem;font-size:2rem}
+.hero-image img{width:100%;max-width:600px;border-radius:12px;box-shadow:0 6px 20px rgba(15,23,42,0.08)}
+
+/* Sections */
+.section{padding:1.2rem 0}
+.section h3{margin:0 0 1rem}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.75rem}
+.grid{display:grid;gap:1rem}
+.categories-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.products-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:0.75rem;
+  box-shadow:0 4px 16px rgba(15,23,42,0.05);
+  display:flex;flex-direction:column;gap:.6rem;
+}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+.card h4{margin:.25rem 0;font-size:1rem}
+.card .price{font-weight:700;color:var(--accent)}
+.card .meta{color:var(--muted);font-size:.9rem}
+.btn{background:var(--primary);color:white;padding:.5rem .75rem;border-radius:8px;border:none;cursor:pointer}
+.btn-outline{background:white;border:1px solid #cbd5e1;padding:.5rem .75rem;border-radius:8px;cursor:pointer}
+
+/* footer */
+.site-footer{padding:1rem 0;text-align:center;color:var(--muted);font-size:.95rem}
+
+/* cart modal */
+.cart-modal{
+  position:fixed;inset:0;display:none;align-items:flex-end;justify-content:flex-end;
+  background:linear-gradient(rgba(6,8,15,0.4),rgba(6,8,15,0.4));
+  z-index:80;padding:2rem;
+}
+.cart-modal[aria-hidden="false"]{display:flex}
+.cart-panel{width:360px;background:white;border-radius:12px;padding:1rem;box-shadow:0 20px 50px rgba(2,6,23,0.4);position:relative}
+.close-btn{position:absolute;right:8px;top:8px;border:none;background:#efefef;padding:.35rem;border-radius:8px;cursor:pointer}
+#cart-items{max-height:48vh;overflow:auto;margin:0.5rem 0}
+.cart-item{display:flex;gap:.5rem;align-items:center;padding:.35rem 0;border-bottom:1px solid #f1f5f9}
+.cart-item img{width:56px;height:48px;object-fit:cover;border-radius:8px}
+.cart-footer{display:flex;justify-content:space-between;align-items:center;margin-top:.5rem}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column-reverse;text-align:center}
+  .main-nav{display:none}
+  .header-inner{gap:.5rem}
+  .header-actions input[type="search"]{display:none}
+                                                   }
